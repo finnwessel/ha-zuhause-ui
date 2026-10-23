@@ -1,0 +1,9 @@
+{
+  "name": "ha-zuhause-ui",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Eigene Lovelace-Karten und Styleguide-Tokens für das Home-Assistant-Dashboard „Übersicht“",
+  "scripts": { "build": "node scripts/build.mjs" },
+  "license": "MIT"
+}
