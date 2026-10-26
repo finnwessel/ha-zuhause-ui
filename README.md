@@ -39,7 +39,7 @@ Flächen werden nie mit Verläufen gefüllt, sondern getönt: `color-mix(in srgb
 | `custom:raum-kachel-card` | Raum-Kachel mit Temperatur/Luftfeuchte – Antippen öffnet den Verlauf |
 | `custom:raum-licht-card` | Raumlicht mit Szenen, Lampen und Reglern |
 | `custom:raum-reinigung-card` | Raum saugen/wischen |
-| `custom:saugplan-card` | Saugplan pro Raum und Warteschlange |
+| `custom:saugplan-card` | Warteschlange (Etappen als Chips) und Plan pro Raum – braucht die Integration [Vacuum Planner](https://github.com/finnwessel/ha-vacuum-planner) |
 | `custom:appliance-status-card` | Status/Fortschritt für Haushaltsgeräte |
 | `custom:fridge-status-card` | Kühlschrank (Tür, Temperatur, Zonen, Modi) |
 | `custom:geschirrspueler-card` | Home-Connect-Geschirrspüler |
