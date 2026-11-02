@@ -1,11 +1,11 @@
-/*! Zuhause UI 1.2.0 – eigene Lovelace-Karten & Styleguide-Tokens · MIT */
+/*! Zuhause UI 1.2.1 – eigene Lovelace-Karten & Styleguide-Tokens · MIT */
 /* zuhause-ui – gemeinsamer Baukasten für ein mobiles Home-Assistant-Dashboard
  * Tokens (Styleguide), Hilfsfunktionen, zh-button, zh-tabs, raum-kachel-card,
  * Verlaufsansicht (Bottom-Sheet) und Farbangleich für die Flower Card.
  * Farben nur als Rollen bzw. HA-Farbnamen, nie als Hex-Wert.
  */
 const ZH = (window.ZH = window.ZH || {});
-ZH.version = "1.2.0";
+ZH.version = "1.2.1";
 
 /* ---------- Tokens ----------
  * Fallback-Werte. Ein Theme (themes/zuhause.yaml) setzt dieselben Variablen
@@ -438,8 +438,8 @@ class ZHTabs extends ZHBase {
 
 /* ---------- raum-kachel-card ----------
  * Raumkachel für die Startseite: Name, Temperatur/Feuchte, Lichter, Fenster/Bewegung,
- * kleiner Schimmel-Hinweis. Tippen = Raumansicht, Halten = Details,
- * Tippen auf die Messwerte = Verlauf.
+ * kleiner Schimmel-Hinweis. Tippen (auch auf die Messwerte) = Raumansicht, Halten = Details.
+ * Der Verlauf öffnet sich in der Raumansicht über die Heading-Badges.
  */
 class RaumKachelCard extends ZHBase {
   setConfig(c) {
@@ -463,13 +463,6 @@ class RaumKachelCard extends ZHBase {
     const s = id && this._hass.states[id];
     if (!s || isNaN(parseFloat(s.state))) return null;
     return parseFloat(s.state).toLocaleString("de-DE", { maximumFractionDigits: d, minimumFractionDigits: d });
-  }
-  _history(active) {
-    const c = this._config;
-    const series = [];
-    if (c.temperature) series.push({ entity: c.temperature, name: "Temperatur", color: "deep-orange", icon: "mdi:thermometer" });
-    if (c.humidity) series.push({ entity: c.humidity, name: "Luftfeuchte", color: "cyan", icon: "mdi:water-percent" });
-    if (series.length) ZH.openHistory(this._hass, { title: c.name, series, active });
   }
   _render() {
     if (!this._config || !this._hass) return;
@@ -500,7 +493,6 @@ class RaumKachelCard extends ZHBase {
         ha-card:active{transform:scale(.98)}
         .head{min-width:0}
         .meta{display:flex;align-items:center;gap:4px;font-size:var(--zh-f-meta);color:var(--secondary-text-color);margin-top:2px;min-height:18px}
-        .stat{padding:4px 0;margin:-4px 0}
         .dot{opacity:.6}
         .al{--mdc-icon-size:18px}
         .lights{grid-row:1/3;grid-column:2;display:flex;flex-direction:column;gap:6px}
@@ -529,7 +521,6 @@ class RaumKachelCard extends ZHBase {
       el.addEventListener("pointerdown", (ev) => ev.stopPropagation());
       el.addEventListener("click", (ev) => { ev.stopPropagation(); fn(); });
     };
-    this.shadowRoot.querySelectorAll(".stat").forEach((s) => stop(s, () => { ZH.haptic(this); this._history(Number(s.dataset.i)); }));
     this.shadowRoot.querySelectorAll(".lb").forEach((b) => stop(b, () => {
       ZH.haptic(this);
       h.callService("homeassistant", "toggle", { entity_id: lights[Number(b.dataset.i)].entity_id });

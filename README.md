@@ -36,7 +36,7 @@ Flächen werden nie mit Verläufen gefüllt, sondern getönt: `color-mix(in srgb
 |---|---|
 | `custom:zh-button` | Knopf/Kachel (Varianten `plain`, `tint`, `nav`, `ghost`; Layouts `row`, `vertical`, `image`) |
 | `custom:zh-tabs` | Reiter innerhalb einer Ansicht (Auswahl per `#hash`) |
-| `custom:raum-kachel-card` | Raum-Kachel mit Temperatur/Luftfeuchte – Antippen öffnet den Verlauf |
+| `custom:raum-kachel-card` | Raum-Kachel mit Temperatur/Luftfeuchte – Antippen öffnet die Raumansicht, Halten die Details |
 | `custom:raum-licht-card` | Raumlicht mit Szenen, Lampen und Reglern |
 | `custom:raum-reinigung-card` | Raum saugen/wischen |
 | `custom:saugplan-card` | Warteschlange (Etappen als Chips) und Plan pro Raum – braucht die Integration [Vacuum Planner](https://github.com/finnwessel/ha-vacuum-planner) |
@@ -50,7 +50,7 @@ Außerdem passt das Modul die Balkenfarben der [Flower Card](https://github.com/
 
 ## Verlauf (Bottom-Sheet)
 
-Temperatur und Luftfeuchte öffnen ein Verlaufsblatt (24 Std. / 7 Tage / 30 Tage, Min/Ø/Max, Wischen zum Ablesen). Aus jeder Karte, die `fire-dom-event` kann (z. B. Heading-Badges):
+Verlaufsblatt für Messwerte (24 Std. / 7 Tage / 30 Tage, Min/Ø/Max, Wischen zum Ablesen). Aus jeder Karte, die `fire-dom-event` kann (z. B. Heading-Badges):
 
 ```yaml
 tap_action:
