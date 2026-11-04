@@ -1,11 +1,11 @@
-/*! Zuhause UI 1.2.1 – eigene Lovelace-Karten & Styleguide-Tokens · MIT */
+/*! Zuhause UI 1.3.0 – eigene Lovelace-Karten & Styleguide-Tokens · MIT */
 /* zuhause-ui – gemeinsamer Baukasten für ein mobiles Home-Assistant-Dashboard
  * Tokens (Styleguide), Hilfsfunktionen, zh-button, zh-tabs, raum-kachel-card,
  * Verlaufsansicht (Bottom-Sheet) und Farbangleich für die Flower Card.
  * Farben nur als Rollen bzw. HA-Farbnamen, nie als Hex-Wert.
  */
 const ZH = (window.ZH = window.ZH || {});
-ZH.version = "1.2.1";
+ZH.version = "1.3.0";
 
 /* ---------- Tokens ----------
  * Fallback-Werte. Ein Theme (themes/zuhause.yaml) setzt dieselben Variablen
@@ -19,7 +19,7 @@ if (!document.getElementById("zuhause-ui-tokens")) {
     --zh-f-title:18px; --zh-f-card:15px; --zh-f-body:14px; --zh-f-meta:13px; --zh-f-label:12px;
     --zh-light:var(--amber-color); --zh-warm:var(--deep-orange-color); --zh-water:var(--cyan-color);
     --zh-appliance:var(--blue-color); --zh-robot:var(--deep-purple-color); --zh-night:var(--indigo-color);
-    --zh-personal:var(--pink-color); --zh-hint:var(--warning-color); --zh-error:var(--error-color);
+    --zh-personal:var(--pink-color); --zh-media:var(--pink-color); --zh-hint:var(--warning-color); --zh-error:var(--error-color);
     --zh-ok:var(--success-color); --zh-neutral:var(--secondary-text-color);
   }`;
   document.head.appendChild(tokens);

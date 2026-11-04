@@ -25,6 +25,7 @@ Eigene Lovelace-Karten und gemeinsame Styleguide-Tokens für ein mobiles Home-As
 | `--zh-robot` | deep-purple | Saugroboter |
 | `--zh-night` | indigo | Nacht, Schlaf |
 | `--zh-personal` | pink | Personen |
+| `--zh-media` | pink | Medien (Receiver, Musik) |
 | `--zh-hint` / `--zh-error` / `--zh-ok` | warning / error / success | Status |
 | `--zh-neutral` | secondary-text | aus / inaktiv |
 

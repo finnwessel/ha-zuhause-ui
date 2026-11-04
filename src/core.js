@@ -18,7 +18,7 @@ if (!document.getElementById("zuhause-ui-tokens")) {
     --zh-f-title:18px; --zh-f-card:15px; --zh-f-body:14px; --zh-f-meta:13px; --zh-f-label:12px;
     --zh-light:var(--amber-color); --zh-warm:var(--deep-orange-color); --zh-water:var(--cyan-color);
     --zh-appliance:var(--blue-color); --zh-robot:var(--deep-purple-color); --zh-night:var(--indigo-color);
-    --zh-personal:var(--pink-color); --zh-hint:var(--warning-color); --zh-error:var(--error-color);
+    --zh-personal:var(--pink-color); --zh-media:var(--pink-color); --zh-hint:var(--warning-color); --zh-error:var(--error-color);
     --zh-ok:var(--success-color); --zh-neutral:var(--secondary-text-color);
   }`;
   document.head.appendChild(tokens);
